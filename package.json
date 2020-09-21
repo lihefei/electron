@@ -1,0 +1,15 @@
+{
+    "name": "electron-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "package": "electron-packager . electron桌面端 --platform=win32 --arch=x64 --icon=favicon.ico --out=./out --asar --app-version=1.0.0 --overwrite --ignore=node_modules --electron-version 10.1.1"
+    },
+    "author": "lihefei",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^10.1.1"
+    }
+}
