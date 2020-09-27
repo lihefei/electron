@@ -3,9 +3,43 @@
     "version": "1.0.0",
     "description": "",
     "main": "main.js",
+    "build": {
+        "productName": "electron桌面端",
+        "appId": "com.lihefei.electron",
+        "copyright": "© lihefei",
+        "directories": {
+            "output": "out"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "installerIcon": "favicon.ico",
+            "installerHeaderIcon": "favicon.ico",
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true
+        },
+        "files": [
+            "index.html",
+            "main.js",
+            "package.json"
+        ],
+        "win": {
+            "icon": "favicon.ico",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "ia32"
+                    ]
+                }
+            ]
+        }
+    },
     "scripts": {
         "start": "electron .",
-        "package": "electron-packager . electron桌面端 --platform=win32 --arch=x64 --icon=favicon.ico --out=./out --asar --app-version=1.0.0 --overwrite --ignore=node_modules --electron-version 10.1.1"
+        "package": "electron-packager . Caster --platform=win32 --arch=x64 --icon=./public/favicon.ico --out=./out --asar --app-version=1.0.0 --overwrite --ignore=node_modules --ignore=src --ignore=public --ignore=.vscode --ignore=.git --ignore=.browserslistrc --ignore=.env.alpha --ignore=.env.development --ignore=.env.production --ignore=.gitignore --ignore=babel.config.js  --ignore=package-lock.json  --ignore=README.md  --ignore=tsconfig.json --ignore=vue.config.js  --electron-version 10.1.1",
+        "builder": "electron-builder"
     },
     "author": "lihefei",
     "license": "ISC",
